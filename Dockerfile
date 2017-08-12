@@ -37,10 +37,11 @@ RUN mkdir /opt/solr_data/ \
                 webapps/manager \
                 webapps/host-manager
 
-
-
 ENV JAVA_OPTS " -XX:-DisableExplicitGC -Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Dfile.encoding=UTF-8 "
-
 
 VOLUME "/opt/solr_data/"
 WORKDIR /root
+
+ADD assets/entrypoint.sh /opt/
+CMD ["/opt/entrypoint.sh" "run"]
+
