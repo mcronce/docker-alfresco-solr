@@ -28,7 +28,7 @@ RUN set -x && \
 
 COPY assets/workspace/* /opt/solr/workspace-SpacesStore/conf/
 COPY assets/archive/* /opt/solr/archive-SpacesStore/conf/
-
+COPY assets/server.xml conf/server.xml
 
 RUN mkdir /opt/solr_data/ \
       && rm -rf /usr/share/doc \
