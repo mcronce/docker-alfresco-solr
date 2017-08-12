@@ -9,7 +9,7 @@ ENV ALF_VERSION=5.2.f
 
 ## SOLR.WAR
 RUN set -x && \
-    curl --silent --location \
+    curl --location \
       ${NEXUS}/org/alfresco/alfresco-solr4/${ALF_VERSION}/alfresco-solr4-${ALF_VERSION}.war \
       -o alfresco-solr4-${ALF_VERSION}.war && \
     unzip -q alfresco-solr4-${ALF_VERSION}.war -d webapps/solr4 && \
@@ -20,7 +20,7 @@ COPY assets/web.xml webapps/solr4/WEB-INF/web.xml
 
 ## SOLR CONF
 RUN set -x && \
-    curl --silent --location \
+    curl --location \
       ${NEXUS}/org/alfresco/alfresco-solr4/${ALF_VERSION}/alfresco-solr4-${ALF_VERSION}-config.zip \
       -o alfresco-solr4-${ALF_VERSION}-config.zip && \
     unzip -q alfresco-solr4-${ALF_VERSION}-config.zip -d /opt/solr/ && \
