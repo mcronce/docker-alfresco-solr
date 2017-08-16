@@ -43,5 +43,6 @@ VOLUME "/opt/solr_data/"
 WORKDIR /root
 
 ADD assets/entrypoint.sh /opt/
-CMD ["/opt/entrypoint.sh" "run"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
+CMD ["run"]
 
